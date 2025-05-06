@@ -15,6 +15,7 @@ class AuthController extends Controller
         return view('login');
     }
 
+
     public function login(Request $request)
     {
         $request->validate([
@@ -86,7 +87,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        session()->flush(); 
+        session()->flush();
         return redirect()->route('login');
     }
 }

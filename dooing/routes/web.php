@@ -35,10 +35,10 @@ Route::get('/to-do-list', [ToDoController::class, 'index'])->name('todo.index');
 Route::post('/to-do-list/add', [ToDoController::class, 'add'])->name('todo.add');
 Route::patch('/to-do-list/toggle/{id}', [ToDoController::class, 'toggle'])->name('todo.toggle');
 Route::delete('/to-do-list/delete/{id}', [ToDoController::class, 'delete'])->name('todo.delete');
-Route::get('/reset-tasks', function () {
-    session()->forget('tasks');
-    return redirect()->route('todo.index');
-});
+// Route::get('/reset-tasks', function () {
+//     session()->forget('tasks');
+//     return redirect()->route('todo.index');
+// });
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 

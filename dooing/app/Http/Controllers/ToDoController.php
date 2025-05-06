@@ -40,7 +40,7 @@ class ToDoController extends Controller
     {
         $tasks = $request->session()->get('tasks', []);
         foreach ($tasks as &$task) {
-            if ($task['id'] === $id) {
+            if ($task['id'] == $id) {
                 $task['completed'] = !$task['completed'];
                 break;
             }
@@ -51,10 +51,11 @@ class ToDoController extends Controller
 
 
     public function delete(Request $request, $id)
-    {
-        $tasks = $request->session()->get('tasks', []);
-        $tasks = array_filter($tasks, fn($task) => $task['id'] !== $id);
-        $request->session()->put('tasks', array_values($tasks));
-        return redirect()->route('todo.index');
-    }
+{
+    $tasks = $request->session()->get('tasks', []);
+    $tasks = array_filter($tasks, fn($task) => $task['id'] != $id);
+    $request->session()->put('tasks', array_values($tasks));
+    return redirect()->route('todo.index');
+}
+
 }
