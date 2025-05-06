@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ToDoController;
+use App\Http\Controllers\PageController;
+
+Route::get('/to-do-list', [PageController::class, 'pengelolaan']);
+
 
 
 /*
